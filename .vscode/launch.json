@@ -10,17 +10,12 @@
           "request": "launch",
           "program": "${command:cmake.launchTargetPath}",
           "args": [],
-          "stopAtEntry": false,
+          "stopAtEntry": true, // cannot seem to launch external window without debugging (and externalConsole set to true), set to false and run with debugging
           "cwd": "${workspaceFolder}",
-          "environment": [
-              {
-                  "name": "PATH",
-                  "value": "C:\\MinGW\\bin"
-              }
-          ],
           "externalConsole": true,
           "MIMode": "gdb",
-          "miDebuggerPath": "C:\\MinGW\\bin\\gdb.exe",
+          "miDebuggerPath": "C:\\Mingw-w64\\mingw64\\bin\\gdb.exe",
+          "logging": { "engineLogging": true},
           "setupCommands": [
               {
                   "description": "Enable pretty-printing for gdb",
