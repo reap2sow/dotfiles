@@ -1,7 +1,4 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
       {
@@ -10,7 +7,7 @@
           "request": "launch",
           "program": "${command:cmake.launchTargetPath}",
           "args": [],
-          "stopAtEntry": true, // cannot seem to launch external window without debugging (and externalConsole set to true), set to false and run with debugging
+          "stopAtEntry": true,
           "cwd": "${workspaceFolder}",
           "externalConsole": true,
           "MIMode": "gdb",
@@ -30,11 +27,11 @@
         "request": "launch",
         "program": "${command:cmake.launchTargetPath}",
         "args": [],
-        "stopAtEntry": true, // cannot seem to launch external window without debugging (and externalConsole set to true), set to false and run with debugging
+        "stopAtEntry": true,
         "cwd": "${workspaceFolder}",
         "externalConsole": true,
         "MIMode": "gdb",
-        "miDebuggerPath": "/usr/bin/gdb.exe",
+        "miDebuggerPath": "/usr/bin/gdb",
         "logging": { "engineLogging": true},
         "setupCommands": [
             {

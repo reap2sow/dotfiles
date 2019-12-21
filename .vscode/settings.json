@@ -4,5 +4,4 @@
         //"iostream": "c"
     },
     "cmake.buildDirectory":"${workspaceFolder}/_build"
-    
 }

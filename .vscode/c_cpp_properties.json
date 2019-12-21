@@ -20,19 +20,19 @@
         {
             "name": "Linux",
             "includePath": [
-                "${workspaceFolder}\\**"
+                "${workspaceFolder}/**"
             ],
             "defines": [
                 "_DEBUG",
                 "UNICODE",
                 "_UNICODE"
             ],
-            "compilerPath": "/usr/bin/gcc.exe",
+            "compilerPath": "/usr/bin/x86_64-linux-gnu-gcc-7",
             "cStandard": "c11",
             "cppStandard": "c++14",
             "intelliSenseMode": "gcc-x64",
             "configurationProvider": "vector-of-bool.cmake-tools",
-            "compileCommands": "${workspaceFolder}\\_build\\compile_commands.json"
+            "compileCommands": "${workspaceFolder}/_build/compile_commands.json"
         }
     ],
     "version": 4
