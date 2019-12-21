@@ -1,3 +1,3 @@
 Linux compiler configurations are based on: https://help.ubuntu.com/community/InstallingCompiler
 (referring to stopAtEntry/Debugging and externalConsole) cannot seem to launch external window without debugging (and externalConsole set to true), set to false and run with debugging
-isostream should be set to either c or cpp, depending on the program
+iostream should be set to either c or cpp, depending on the program
