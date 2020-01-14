@@ -22,7 +22,7 @@
           ]
       },
       {
-        "name": "gdb Launch (Linux)",
+        "name": "gdb Launch Linux (Ubuntu)",
         "type": "cppdbg",
         "request": "launch",
         "program": "${command:cmake.launchTargetPath}",
@@ -32,6 +32,26 @@
         "externalConsole": false,
         "MIMode": "gdb",
         "miDebuggerPath": "/usr/bin/gdb",
+        "logging": { "engineLogging": true},
+        "setupCommands": [
+            {
+                "description": "Enable pretty-printing for gdb",
+                "text": "-enable-pretty-printing",
+                "ignoreFailures": true
+            }
+        ]
+    },
+    {
+        "name": "gdb Launch Linux (Pop_Os)",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${command:cmake.launchTargetPath}",
+        "args": [],
+        "stopAtEntry": false,
+        "cwd": "${workspaceFolder}",
+        "externalConsole": false,
+        "MIMode": "gdb",
+        "miDebuggerPath": "/bin/gdb",
         "logging": { "engineLogging": true},
         "setupCommands": [
             {

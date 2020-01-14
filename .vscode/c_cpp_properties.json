@@ -18,7 +18,7 @@
             "compileCommands": "${workspaceFolder}\\_build\\compile_commands.json"
         },
         {
-            "name": "Linux",
+            "name": "Linux (Ubuntu)",
             "includePath": [
                 "${workspaceFolder}/**"
             ],
@@ -28,6 +28,23 @@
                 "_UNICODE"
             ],
             "compilerPath": "/usr/bin/x86_64-linux-gnu-gcc-7",
+            "cStandard": "c11",
+            "cppStandard": "c++14",
+            "intelliSenseMode": "gcc-x64",
+            "configurationProvider": "vector-of-bool.cmake-tools",
+            "compileCommands": "${workspaceFolder}/_build/compile_commands.json"
+        },
+        {
+            "name": "Linux (Pop_Os)",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "compilerPath": "/bin/x86_64-linux-gnu-gcc-9",
             "cStandard": "c11",
             "cppStandard": "c++14",
             "intelliSenseMode": "gcc-x64",
