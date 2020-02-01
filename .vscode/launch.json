@@ -60,7 +60,14 @@
                 "ignoreFailures": true
             }
         ]
+    },
+    {
+        "name": "Python: Current File (Pop_Os)",
+        "type": "python",
+        "request": "launch",
+        "args": [],
+        "program": "${file}",
+        "console": "integratedTerminal"
     }
-
   ]
 }
