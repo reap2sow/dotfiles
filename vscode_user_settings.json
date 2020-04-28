@@ -1,0 +1,10 @@
+{
+    "editor.minimap.enabled": false,
+    "git.autofetch": true,
+    "todo-tree.tree.showScanModeButton": false,
+    "git.confirmSync": false,
+    "python.formatting.provider": "black",
+    "terminal.integrated.inheritEnv": false,
+    "workbench.colorTheme": "Jellybeams",
+    "workbench.iconTheme": "vscode-icons"
+}
