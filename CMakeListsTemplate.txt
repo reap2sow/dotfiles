@@ -1,7 +1,0 @@
-# CMakeLists.txt
-
-set(CMAKE_CXX_FLAGS "-Wall")
-cmake_minimum_required(VERSION 2.8)
-project(CMakeListsTemplateTarget)
-
-add_executable(CMakeListsTemplateTarget CMakeListsTemplateTarget.c)

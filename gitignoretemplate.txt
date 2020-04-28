@@ -1,6 +1,0 @@
-#ignore .vscode configurations
-.vscode
-
-#ignore build
-_build
-build
