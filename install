@@ -5,12 +5,13 @@ PWD="$(pwd)"
 PROGRAM_NAME="install"
 BASHRC_FILE_NAME=".bashrc" # assuming .bashrc is ALWAYS '.bashrc'
 TEMP_DIR_NAME="${PROGRAM_NAME}-temp"
-BASHRC_REMOTE_URL=
+BASHRC_REMOTE_URL='https://raw.githubusercontent.com/reap2sow1/dotfiles/main/.bashrc'
 DOTFILES_TO_INCLUDE_FOR_LINKING=(
     .bashrc
 )
 
 if [ "$PWD" != "$HOME" ]; then
+    # main reason is to avoid filemode permissions
     echo "${PROGRAM_NAME}: Re-run this script in $HOME (assuming you haven't changed this!), to run this correctly"
     exit 1
 fi
@@ -23,7 +24,7 @@ cd $TEMP_DIR_NAME || echo "${PROGRAM_NAME}: Cannot ENTER $TEMP_DIR_NAME director
 
 [[ -n "$(which wget)" ]] || echo "${PROGRAM_NAME}: wget cannot be found on the PATH!" && exit 1
 if ! wget "$BASHRC_REMOTE_URL"; then
-    echo "${PROGRAM_NAME}: Could not fetch .bashrc from remote dotfiles repo!"
+    echo "${PROGRAM_NAME}: Could not fetch .bashrc from url!"
     exit 1
 fi
 # shellcheck disable=SC1090

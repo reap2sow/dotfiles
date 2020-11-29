@@ -117,11 +117,11 @@ if ! shopt -oq posix; then
 fi
 
 # adds git repository directory as env var
-export GIT_REPOS_PATH="$HOME"/git
+export GIT_REPOS_PATH="${HOME}/git"
 
-# To be used by solely the dotfiles repo
+# To be used by solely the install script of dotfiles repo
 DOTFILES_REPO_NAME="dotfiles"
-DOTFILES_REMOTE_REPO_URL="https://github.com/reap2sow1/$DOTFILES_REPO_NAME"
+DOTFILES_REMOTE_REPO_URL="https://github.com/reap2sow1/${DOTFILES_REPO_NAME}"
 
 # ANSI escape code sequences for status messages with character coloring
 export SUCCESS="\033[1;32m[SUCCESS]:\033[0m"
@@ -130,8 +130,8 @@ export ERROR="\033[1;31m[ERROR]:\033[0m"
 
 # The bashrc file should come from the dotfiles repo (ACTUAL_BASHRC_PATH)
 # but any other script should just refer to its default location
-export BASHRC_PATH="$HOME"/.bashrc
-# export ACTUAL_BASHRC_PATH="$GIT_REPOS_PATH"/"$DOTFILES_REPO_NAME"/.bashrc
+export BASHRC_PATH="${HOME}/.bashrc"
+# export ACTUAL_BASHRC_PATH="${GIT_REPOS_PATH}/${DOTFILES_REPO_NAME}/.bashrc"
 
 # set if use custom prompt
 custom_prompt=yes
