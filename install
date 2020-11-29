@@ -23,11 +23,16 @@ read -r -e -p "Is this a reinstall, y/n? (n) " RE_INSTALL_REPLY
 mkdir "$TEMP_DIR_NAME" || exit 1
 cd "$TEMP_DIR_NAME" || exit 1
 
-[[ -n "$(which wget)" ]] || echo "${PROGRAM_NAME}: wget cannot be found on the PATH!" && exit 1
+if [ -z "$(which wget)" ]; then
+    echo "${PROGRAM_NAME}: wget cannot be found on the PATH!"
+    exit 1
+fi
+
 if ! wget --quiet "$BASHRC_REMOTE_URL"; then
     echo "${PROGRAM_NAME}: Could not fetch .bashrc from url!"
     exit 1
 fi
+
 # shellcheck disable=SC1090
 source "./${BASHRC_FILE_NAME}"
 rm "./${BASHRC_FILE_NAME}"
