@@ -20,7 +20,7 @@ if [ "$PWD" != "$HOME" ]; then
 fi
 
 # shellcheck disable=2034
-read -r -e -p "Is this a reinstall, y/n? (n) " RE_INSTALL_REPLY
+read -r -e -p "Is this a reinstall, y/n? (n) " RE_INSTALL_REPLY <&1
 
 mkdir "$TEMP_DIR_NAME" || exit 1
 cd "$TEMP_DIR_NAME" || exit 1
