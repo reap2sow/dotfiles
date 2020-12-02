@@ -33,7 +33,7 @@ mkdir "$TEMP_DIR_NAME" || exit 1
 cd "$TEMP_DIR_NAME" || exit 1
 
 # --fail just means to 'fail' silently without a http status code
-if ! curl --silent --fail "$PROFILE_REMOTE_URL"; then
+if ! curl --silent --fail "$PROFILE_REMOTE_URL" -o "$PROFILE_FILE_NAME"; then
     echo "${PROGRAM_NAME}: could not fetch .profile from url!"
     exit 1
 fi
