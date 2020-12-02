@@ -1,6 +1,6 @@
 #!/bin/bash
 # Small setup script for dotfiles repo.
-# Usage: curl https://raw.githubusercontent.com/reap2sow1/dotfiles/main/install | bash
+# Usage: curl --silent https://raw.githubusercontent.com/reap2sow1/dotfiles/main/install | bash
 set -e
 PWD="$(pwd)"
 PROGRAM_NAME="install"
@@ -19,8 +19,8 @@ if [ "$PWD" != "$HOME" ]; then
     exit 1
 fi
 
-if [ -z "$(which wget)" ]; then
-    echo "${PROGRAM_NAME}: wget cannot be found on the PATH!"
+if [ -z "$(which curl)" ]; then
+    echo "${PROGRAM_NAME}: curl cannot be found on the PATH!"
     exit 1
 fi
 
@@ -32,7 +32,8 @@ fi
 mkdir "$TEMP_DIR_NAME" || exit 1
 cd "$TEMP_DIR_NAME" || exit 1
 
-if ! wget --quiet "$PROFILE_REMOTE_URL"; then
+# --fail just means to 'fail' silently without a http status code
+if ! curl --silent --fail "$PROFILE_REMOTE_URL"; then
     echo "${PROGRAM_NAME}: could not fetch .profile from url!"
     exit 1
 fi
