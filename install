@@ -19,16 +19,18 @@ if [ "$PWD" != "$HOME" ]; then
     exit 1
 fi
 
-# shellcheck disable=2034
-read -r -e -p "Is this a reinstall, y/n? (n) " RE_INSTALL_REPLY <&1
-
-mkdir "$TEMP_DIR_NAME" || exit 1
-cd "$TEMP_DIR_NAME" || exit 1
-
 if [ -z "$(which wget)" ]; then
     echo "${PROGRAM_NAME}: wget cannot be found on the PATH!"
     exit 1
 fi
+
+if [ -z "$(which git)" ]; then
+    echo "${PROGRAM_NAME}: git cannot be found on the PATH!"
+    exit 1
+fi
+
+mkdir "$TEMP_DIR_NAME" || exit 1
+cd "$TEMP_DIR_NAME" || exit 1
 
 if ! wget --quiet "$PROFILE_REMOTE_URL"; then
     echo "${PROGRAM_NAME}: could not fetch .profile from url!"
@@ -42,13 +44,16 @@ cd ..
 rmdir "$TEMP_DIR_NAME"
 
 if [ -z "$GIT_REPOS_PATH" ]; then
-    echo "${PROGRAM_NAME}: unable to import env vars from .profile"
+    echo "${PROGRAM_NAME}: \$GIT_REPOS_PATH was not imported from .profile"
     exit 1
 elif ! [ -d "$GIT_REPOS_PATH" ]; then 
     mkdir -p "$GIT_REPOS_PATH"
 fi
 
 LOCAL_REPO_PATH="${GIT_REPOS_PATH}/${DOTFILES_REPO_NAME}"
+
+# shellcheck disable=2034
+read -r -e -p "Is this a reinstall, y/n? (n) " RE_INSTALL_REPLY <&1
 
 # using parameter expansion, ',,' append will convert the string to lowercase
 if [ "${RE_INSTALL_REPLY,,}" == "y" ]; then
