@@ -1,9 +1,9 @@
 # adds git repository directory as env var
 export GIT_REPOS_PATH="${HOME}/git"
 
-# To be used by solely the install script of dotfiles repo
-DOTFILES_REPO_NAME="dotfiles"
-DOTFILES_REMOTE_REPO_URL="https://github.com/reap2sow1/${DOTFILES_REPO_NAME}"
+# dotfile repo information, is used in several places
+export DOTFILES_REPO_NAME="dotfiles"
+export DOTFILES_REMOTE_REPO_URL="https://github.com/reap2sow1/${DOTFILES_REPO_NAME}"
 
 # ANSI escape code sequences for status messages with character coloring
 export SUCCESS="\033[1;32m[SUCCESS]:\033[0m"
