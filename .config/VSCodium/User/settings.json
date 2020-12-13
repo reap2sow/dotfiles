@@ -1,0 +1,10 @@
+{
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.settings.enableNaturalLanguageSearch": false,
+    "workbench.settings.editor": "json",
+    "workbench.colorTheme": "Boron",
+    "editor.minimap.enabled": false,
+    "git.enableCommitSigning": true,
+    "clangd.path": "/home/reap2sow1/.config/VSCodium/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/11.0.0/clangd_11.0.0/bin/clangd",
+    "todo-tree.tree.showScanModeButton": false
+}
