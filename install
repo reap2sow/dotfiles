@@ -71,6 +71,9 @@ fi
 git clone -b "codium-settings" --quiet "$DOTFILES_REMOTE_REPO_URL" "$LOCAL_REPO_PATH" > /dev/null
 # it is assumed all dotfiles will exist in the same directory (e.g. $HOME)
 for dotfile in "${DOTFILES_TO_INCLUDE_FOR_LINKING[@]}"; do
+    if [ "$(dirname dotfile)" != "." ]; then
+        mkdir -p "$(dirname dotfile)"
+    fi
     ln -sf "$LOCAL_REPO_PATH/$dotfile" "./$dotfile"
 done
 
