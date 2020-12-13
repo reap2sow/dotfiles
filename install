@@ -68,7 +68,7 @@ if [ "${RE_INSTALL_REPLY,,}" == "y" ]; then
     rm -rf "$LOCAL_REPO_PATH"
 fi
 
-git clone -b "codium-settings" --quiet "$DOTFILES_REMOTE_REPO_URL" "$LOCAL_REPO_PATH" > /dev/null
+git clone --quiet "$DOTFILES_REMOTE_REPO_URL" "$LOCAL_REPO_PATH" > /dev/null
 # it is assumed all dotfiles will exist in the same directory (e.g. $HOME)
 for dotfile in "${DOTFILES_TO_INCLUDE_FOR_LINKING[@]}"; do
     if [ "$(dirname "$dotfile")" != "." ]; then
