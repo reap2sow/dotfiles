@@ -69,7 +69,8 @@ if [ "${RE_INSTALL_REPLY,,}" == "y" ]; then
 fi
 
 git clone --quiet "$DOTFILES_REMOTE_REPO_URL" "$LOCAL_REPO_PATH" > /dev/null
-# it is assumed all dotfiles will exist in the same directory (e.g. $HOME)
+# dotfiles may exist in other directories, so we want to make sure the parent directories
+# exist before placing down the target link
 for dotfile in "${DOTFILES_TO_INCLUDE_FOR_LINKING[@]}"; do
     if [ "$(dirname "$dotfile")" != "." ]; then
         mkdir -p "$(dirname "$dotfile")"
