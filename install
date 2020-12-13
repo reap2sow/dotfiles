@@ -11,6 +11,8 @@ DOTFILES_TO_INCLUDE_FOR_LINKING=(
     .bashrc
     .profile
     .bash_profile
+    .gitignore
+    .gitconfig
 )
 
 if [ "$PWD" != "$HOME" ]; then

@@ -1,0 +1,13 @@
+[user]
+	name = Conner Crosby
+	email = crosbyco3@gmail.com
+[core]
+	editor = "codium --wait"
+	excludesFile = /home/reap2sow1/.gitignore
+[credential]
+	helper = store
+[alias]
+	unstage = restore --staged
+	discard = restore
+	lastci = log -1
+	lastp = log -p -1
