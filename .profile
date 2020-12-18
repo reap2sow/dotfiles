@@ -10,6 +10,12 @@ export SUCCESS="\033[1;32m[SUCCESS]:\033[0m"
 export WARNING="\033[1;33m[WARNING]:\033[0m"
 export ERROR="\033[1;31m[ERROR]:\033[0m"
 
+# what shell dotfile to write to
+export SHELL_DOTFILE_TO_WRITE_TO=".profile"
+
+# add .local/bin directory to PATH
+export PATH="${PATH}:${HOME}/.local/bin"
+
 # The bashrc file should come from the dotfiles repo (ACTUAL_BASHRC_PATH)
 # but any other script should just refer to bashrc's default location (as this might be 
 # linked to the bashrc in dotfiles repo), at least for interactive non-login bash shells:
@@ -19,9 +25,6 @@ export ERROR="\033[1;31m[ERROR]:\033[0m"
 
 # set if use custom prompt
 CUSTOM_PROMPT=yes
-
-# add .local/bin directory to PATH
-export PATH="${PATH}:${HOME}/.local/bin"
 
 if [ -n "$CUSTOM_PROMPT" ]; then
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\n\[\033[00m\]\$ '
