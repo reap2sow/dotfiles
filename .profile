@@ -18,11 +18,11 @@ export ERROR="\033[1;31m[ERROR]:\033[0m"
 # export ACTUAL_BASHRC_PATH="${GIT_REPOS_PATH}/${DOTFILES_REPO_NAME}/.bashrc"
 
 # set if use custom prompt
-custom_prompt=yes
+CUSTOM_PROMPT=yes
 
 # add .local/bin directory to PATH
 export PATH="${PATH}:${HOME}/.local/bin"
 
-if [ -n "$custom_prompt" ]; then
+if [ -n "$CUSTOM_PROMPT" ]; then
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\n\[\033[00m\]\$ '
 fi
