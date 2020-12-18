@@ -11,13 +11,17 @@ export WARNING="\033[1;33m[WARNING]:\033[0m"
 export ERROR="\033[1;31m[ERROR]:\033[0m"
 
 # The bashrc file should come from the dotfiles repo (ACTUAL_BASHRC_PATH)
-# but any other script should just refer to its default location (as this might be 
-# linked to the bashrc in dotfiles repo)
-export BASHRC_PATH="${HOME}/.bashrc"
+# but any other script should just refer to bashrc's default location (as this might be 
+# linked to the bashrc in dotfiles repo), at least for interactive non-login bash shells:
+# ~/.bashrc
+# https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Bash-Startup-Files
 # export ACTUAL_BASHRC_PATH="${GIT_REPOS_PATH}/${DOTFILES_REPO_NAME}/.bashrc"
 
 # set if use custom prompt
 custom_prompt=yes
+
+# add .local/bin directory to PATH
+export PATH="${PATH}:${HOME}/.local/bin"
 
 if [ -n "$custom_prompt" ]; then
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\n\[\033[00m\]\$ '
