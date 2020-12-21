@@ -29,3 +29,7 @@ CUSTOM_PROMPT=yes
 if [ -n "$CUSTOM_PROMPT" ]; then
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\n\[\033[00m\]\$ '
 fi
+
+export PATH="/home/reap2sow1/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
