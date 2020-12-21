@@ -10,7 +10,8 @@ export SUCCESS="\033[1;32m[SUCCESS]:\033[0m"
 export WARNING="\033[1;33m[WARNING]:\033[0m"
 export ERROR="\033[1;31m[ERROR]:\033[0m"
 
-# what shell dotfile to write to
+# some utilities write to a shell dotfile, I explicitly
+# like having a particular shell dotfile to write to hence the env var
 export SHELL_DOTFILE_TO_WRITE_TO=".profile"
 
 # add .local/bin directory to PATH
@@ -30,6 +31,8 @@ if [ -n "$CUSTOM_PROMPT" ]; then
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\n\[\033[00m\]\$ '
 fi
 
+# pyenv is used to manage different versions of python on the same system
+# uses the following to initilize the shell env for both pyenv and its extension virtualenv
 export PATH="/home/reap2sow1/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
