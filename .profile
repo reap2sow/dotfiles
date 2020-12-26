@@ -33,6 +33,9 @@ fi
 
 # pyenv is used to manage different versions of python on the same system
 # uses the following to initilize the shell env for both pyenv and its extension virtualenv
-export PATH="/home/reap2sow1/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+export PYENV_ROOT="${HOME}/.pyenv"
+if [ -d "$PYENV_ROOT" ]; then
+    export PATH="/home/reap2sow1/.pyenv/bin:$PATH"
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
+fi
