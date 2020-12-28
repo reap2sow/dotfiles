@@ -3,7 +3,7 @@
 # Usage: curl --silent https://raw.githubusercontent.com/reap2sow1/dotfiles/main/install | bash
 set -e
 PWD="$(pwd)"
-PROGRAM_NAME="install"
+PROGRAM_NAME="$(basename "$0")"
 PROFILE_FILE_NAME=".profile" # assuming .profile is ALWAYS '.profile'
 TEMP_DIR_NAME="${PROGRAM_NAME}-temp"
 PROFILE_REMOTE_URL='https://raw.githubusercontent.com/reap2sow1/dotfiles/main/.profile'
@@ -78,4 +78,4 @@ for dotfile in "${DOTFILES_TO_INCLUDE_FOR_LINKING[@]}"; do
     ln -sf "$LOCAL_REPO_PATH/$dotfile" "./$dotfile"
 done
 
-echo -e "$SUCCESS 'install' was successfull! Restart your shell session to pull in new configurations"
+echo -e "$SUCCESS installation was successfull! Restart your shell session to pull in new configurations"
