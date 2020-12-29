@@ -65,7 +65,7 @@ if [ "${RE_INSTALL_REPLY,,}" == "y" ]; then
         echo "$ERROR the $DOTFILES_REPO_NAME cannot be found on the local file system"
         exit 1
     fi
-    rm -rf "$LOCAL_REPO_PATH"
+    rm --recursive --force "$LOCAL_REPO_PATH"
 fi
 
 git clone --quiet "$DOTFILES_REMOTE_REPO_URL" "$LOCAL_REPO_PATH" > /dev/null
