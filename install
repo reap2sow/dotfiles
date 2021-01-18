@@ -3,7 +3,7 @@
 # Usage: curl --silent https://raw.githubusercontent.com/reap2sow1/dotfiles/main/install | bash
 set -e
 PWD="$(pwd)"
-PROGRAM_NAME="install"
+PROGRAM_NAME="$(basename "$0")"
 PROFILE_FILE_NAME=".profile" # assuming .profile is ALWAYS '.profile'
 TEMP_DIR_NAME="${PROGRAM_NAME}-temp"
 PROFILE_REMOTE_URL='https://raw.githubusercontent.com/reap2sow1/dotfiles/main/.profile'
@@ -13,6 +13,7 @@ DOTFILES_TO_INCLUDE_FOR_LINKING=(
     .bash_profile
     .gitignore
     .gitconfig
+    .msmtprc
     .config/VSCodium/User/settings.json
 )
 
@@ -65,7 +66,7 @@ if [ "${RE_INSTALL_REPLY,,}" == "y" ]; then
         echo "$ERROR the $DOTFILES_REPO_NAME cannot be found on the local file system"
         exit 1
     fi
-    rm -rf "$LOCAL_REPO_PATH"
+    rm --recursive --force "$LOCAL_REPO_PATH"
 fi
 
 git clone --quiet "$DOTFILES_REMOTE_REPO_URL" "$LOCAL_REPO_PATH" > /dev/null
@@ -78,4 +79,4 @@ for dotfile in "${DOTFILES_TO_INCLUDE_FOR_LINKING[@]}"; do
     ln -sf "$LOCAL_REPO_PATH/$dotfile" "./$dotfile"
 done
 
-echo -e "$SUCCESS 'install' was successfull! Restart your shell session to pull in new configurations"
+echo -e "$SUCCESS installation was successfull! Restart your shell session to pull in new configurations"
