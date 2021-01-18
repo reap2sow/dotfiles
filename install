@@ -66,10 +66,15 @@ if [ "${RE_INSTALL_REPLY,,}" == "y" ]; then
         echo "$ERROR the $DOTFILES_REPO_NAME cannot be found on the local file system"
         exit 1
     fi
-    rm --recursive --force "$LOCAL_REPO_PATH"
+    cd "$LOCAL_REPO_PATH"
+    git stash push --quiet
+    git pull --quiet
+    git stash pop --quiet
+    cd - > /dev/null
+else
+    git clone --quiet "$DOTFILES_REMOTE_REPO_URL" "$LOCAL_REPO_PATH" > /dev/null
 fi
 
-git clone --quiet "$DOTFILES_REMOTE_REPO_URL" "$LOCAL_REPO_PATH" > /dev/null
 # dotfiles may exist in other directories, so we want to make sure the parent directories
 # exist before placing down the target link
 for dotfile in "${DOTFILES_TO_INCLUDE_FOR_LINKING[@]}"; do
