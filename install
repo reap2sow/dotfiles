@@ -15,6 +15,8 @@ DOTFILES_TO_INCLUDE_FOR_LINKING=(
     .gitconfig
     .msmtprc
     .config/VSCodium/User/settings.json
+    .ssh/authorized_keys
+    .ssh/config
 )
 
 if [ "$PWD" != "$HOME" ]; then
@@ -77,6 +79,8 @@ fi
 
 # dotfiles may exist in other directories, so we want to make sure the parent directories
 # exist before placing down the target link
+# NOTE: check and make sure the dotfile is in DOTFILES_TO_INCLUDE_FOR_LINKING
+# or else the particular dotfile will not be linked at install!
 for dotfile in "${DOTFILES_TO_INCLUDE_FOR_LINKING[@]}"; do
     if [ "$(dirname "$dotfile")" != "." ]; then
         mkdir -p "$(dirname "$dotfile")"
