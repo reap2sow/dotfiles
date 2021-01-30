@@ -1,6 +1,9 @@
 # adds git repository directory as env var
 export GIT_REPOS_PATH="${HOME}/git"
 
+# preferred editor as env var
+export EDITOR="codium --wait"
+
 # dotfile repo information, is used in several places
 export DOTFILES_REPO_NAME="dotfiles"
 export DOTFILES_REMOTE_REPO_URL="https://github.com/reap2sow1/${DOTFILES_REPO_NAME}"
