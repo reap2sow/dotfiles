@@ -62,7 +62,7 @@ fi
 LOCAL_REPO_PATH="${GIT_REPOS_PATH}/${DOTFILES_REPO_NAME}"
 
 # shellcheck disable=2034
-read -r -e -p "Is this a reinstall, y/n? (n) " RE_INSTALL_REPLY <&1
+read -r -p "Is this a reinstall, y/n? (n) " RE_INSTALL_REPLY <&1
 
 # using parameter expansion, ',,' append will convert the string to lowercase
 if [ "${RE_INSTALL_REPLY,,}" == "y" ]; then
