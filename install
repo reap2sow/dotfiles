@@ -1,9 +1,11 @@
 #!/bin/bash
+#
 # Small setup script for dotfiles repo.
 # Usage: curl --silent https://raw.githubusercontent.com/reap2sow1/dotfiles/main/install | bash
+
 set -e
 PWD="$(pwd)"
-PROGRAM_NAME="$(basename "$0")"
+PROGRAM_NAME="install"
 PROFILE_FILE_NAME=".profile" # assuming .profile is ALWAYS '.profile'
 TEMP_DIR_NAME="${PROGRAM_NAME}-temp"
 PROFILE_REMOTE_URL='https://raw.githubusercontent.com/reap2sow1/dotfiles/main/.profile'
