@@ -4,6 +4,7 @@
 # shellcheck disable=1090
 
 # If not running interactively, don't do anything
+# TODO(conner@conneracrosby.tech): Look into what I meant by the bottom comment
 # Should be added to .bash_profile if wanted to chunk it from here
 case $- in
     *i*) ;;
@@ -116,6 +117,12 @@ if ! shopt -oq posix; then
   elif [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
   fi
+fi
+
+# prevents .profile from being loaded twice, at least,
+# .bash_profile also currently loads .profile
+if [ -n "$FROM_BASH_PROFILE" ]; then
+    return 0
 fi
 
 # For now load '.profile'.
