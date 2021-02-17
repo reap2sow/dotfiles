@@ -1,6 +1,7 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
+# shellcheck disable=1090
 
 # If not running interactively, don't do anything
 # Should be added to .bash_profile if wanted to chunk it from here
@@ -118,4 +119,4 @@ if ! shopt -oq posix; then
 fi
 
 # For now load '.profile'.
-[[ -r ~/.profile ]] && . ~/.profile
+[[ -r "${HOME}/.profile" ]] && . "${HOME}/.profile"
