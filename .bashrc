@@ -119,11 +119,5 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# prevents .profile from being loaded twice, at least,
-# .bash_profile also currently loads .profile
-if [ -n "$FROM_BASH_PROFILE" ]; then
-    return 0
-fi
-
 # For now load '.profile'.
-[[ -r "${HOME}/.profile" ]] && . "${HOME}/.profile"
+[ -r "${HOME}/.profile" ] && . "${HOME}/.profile"
